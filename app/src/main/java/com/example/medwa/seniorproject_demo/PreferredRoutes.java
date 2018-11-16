@@ -24,8 +24,6 @@ import java.util.ArrayList;
 public class PreferredRoutes extends AppCompatActivity {
 
     ListView listView;
-    TextView text;
-    String busValue;
     ArrayList<String> list = new ArrayList<>();
 
     @Override
@@ -33,7 +31,6 @@ public class PreferredRoutes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferred_routes);
 
-        text = (TextView)findViewById(R.id.routesTextView);
         listView = (ListView)findViewById(R.id.routesListView);
         //String data[] = new String[99];
 
@@ -47,10 +44,8 @@ public class PreferredRoutes extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
-                busValue = value;
-                text.setText(value);
 
-                list.add(busValue);
+                list.add(value);
                 list.add("Test Item 1");
                 list.add("Test Item 2");
                 ArrayAdapter adapter = new ArrayAdapter(PreferredRoutes.this, android.R.layout.simple_list_item_1, android.R.id.text1, list);
@@ -70,11 +65,11 @@ public class PreferredRoutes extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String value = listView.getItemAtPosition(position).toString();
 
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("geo:40.7499880,-73.4219212?z=15&q="+value));
+                //Intent intent = new Intent(Intent.ACTION_VIEW);
+                //intent.setData(Uri.parse("geo:40.7499880,-73.4219212?z=15&q="+value));
+                Intent intent = new Intent(PreferredRoutes.this, MapsActivity.class);
                 startActivity(intent);
 
-                text.setText(value);
             }
         });
 

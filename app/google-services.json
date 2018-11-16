@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "197347094760",
-    "firebase_url": "https://seniorproject-e46eb.firebaseio.com",
-    "project_id": "seniorproject-e46eb",
-    "storage_bucket": "seniorproject-e46eb.appspot.com"
+    "project_number": "1025562979611",
+    "firebase_url": "https://seniorproject-f2659.firebaseio.com",
+    "project_id": "seniorproject-f2659",
+    "storage_bucket": "seniorproject-f2659.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:197347094760:android:8d01f601655ad7e6",
+        "mobilesdk_app_id": "1:1025562979611:android:8d01f601655ad7e6",
         "android_client_info": {
           "package_name": "com.example.medwa.seniorproject_demo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "197347094760-m8g01ndg8kpnevu75lnt9nerudqu06tn.apps.googleusercontent.com",
+          "client_id": "1025562979611-i4rklec9j86thea2rpe8b1s9k792j9j3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBNyNt0_S6H-3Tg9NtWy9FdZ9wck6JEQbM"
+          "current_key": "AIzaSyC8JrDwSQPgYUmromJH9oNHzgO2IIqB7Io"
         }
       ],
       "services": {

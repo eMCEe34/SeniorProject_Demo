@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/loginTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="Username"
@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/passwordTxt2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="Password"
@@ -29,32 +29,25 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
         android:text="Login"
         android:onClick="loginClick"
         />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="OR"
-
-        />
-
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="Register"
+        android:background="#ffffff"
         android:onClick="registerClick"
         />
+
+
 
 </LinearLayout>
