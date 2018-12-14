@@ -16,7 +16,55 @@
         android:id="@+id/mapView"
         />
 
-    <Button
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/mapView">
+
+        <ImageButton
+            android:id="@+id/delayedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:padding="15dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_departure_board_24px_white"
+            />
+
+        <ImageButton
+            android:id="@+id/capacityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:padding="15dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_group_add_24px_white"
+            />
+
+        <ImageButton
+            android:id="@+id/handicapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:padding="15dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_accessible_24px_white"
+            />
+
+        <ImageButton
+            android:id="@+id/hazardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:padding="15dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_warning_24px_white"
+            />
+
+    </LinearLayout>
+
+    <!--<Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Report Status"
@@ -24,8 +72,7 @@
         android:textColor="#ffffff"
         android:layout_alignBottom="@id/mapView"
         android:id="@+id/reportStatusButton"
-        />
-
+    />-->
 
 </RelativeLayout>
 

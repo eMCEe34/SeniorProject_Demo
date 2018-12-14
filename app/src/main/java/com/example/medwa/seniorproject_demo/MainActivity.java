@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -30,6 +31,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     private FirebaseAuth mAuth;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference myRef;
     private boolean mLocationPermissionGranted = false;
     private FusedLocationProviderClient mFusedLocationProvider;
     private RouteInformation routeInfo;
@@ -56,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordTxt2);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance();
+        myRef = mDatabase.getReference();
+
+
     }
 
     @Override
@@ -85,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
         mFusedLocationProvider.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
             @Override
             public void onComplete(@NonNull Task<Location> task) {
@@ -106,15 +116,12 @@ public class MainActivity extends AppCompatActivity {
     public void registerClick(View view) {
         Intent intent = new Intent(this, RegisterScreen.class);
         startActivity(intent);
-        finish();
     }
 
     public void loginClick(View view) {
         String e = email.getText().toString();
         String p = password.getText().toString();
 
-        routeInfo.getLatitude();
-        routeInfo.getLongitude();
 
         if (TextUtils.isEmpty(e) || TextUtils.isEmpty(p)) {
 
@@ -127,9 +134,14 @@ public class MainActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
 
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+                        myRef.child(user.getUid()).child("lat").setValue("");
+                        myRef.child(user.getUid()).child("long").setValue("");
+
+
                         Intent intent = new Intent(MainActivity.this, UserProfile.class);
                         startActivity(intent);
-                        finish();
                     } else {
                         Toast.makeText(MainActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
                     }
@@ -221,5 +233,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
 }
 

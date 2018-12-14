@@ -30,14 +30,17 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:textColor="#ffffff"
-        android:text="Preferred Routes"
+        android:layout_margin="8dp"
+        android:text="Your Routes"
         android:onClick="preferredRouteClick"
         />
 
     <Button
+        android:id="@+id/signoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
+        android:layout_margin="8dp"
         android:text="Sign Out"
         />
 
